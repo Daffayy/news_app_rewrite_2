@@ -10,6 +10,7 @@ dependencies:
   get: 4.6.5
   logger: ^1.2.2
   skeletons: ^0.0.3
+  gap: 2.0.1
   flutter: 
     sdk: flutter
 

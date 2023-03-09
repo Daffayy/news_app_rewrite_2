@@ -7,6 +7,7 @@ abstract class Routes {
   static const SPLASH_ACREEN = _Paths.SPLASH_ACREEN;
   static const DETAIL_NEWS_SCREEN = _Paths.DETAIL_NEWS_SCREEN;
   static const SPLASH_SCREEN = _Paths.SPLASH_SCREEN;
+  static const POST_NEWS_SCREEN = _Paths.POST_NEWS_SCREEN;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const SPLASH_ACREEN = '/splash-acreen';
   static const DETAIL_NEWS_SCREEN = '/detail-news-screen';
   static const SPLASH_SCREEN = '/splash-screen';
+  static const POST_NEWS_SCREEN = '/post-news-screen';
 }

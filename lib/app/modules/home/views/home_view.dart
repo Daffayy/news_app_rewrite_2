@@ -30,20 +30,24 @@ class HomeView extends GetView<HomeController> {
       body: Obx(
         () => controller.isLoading.isTrue
             ? SkeletonListView()
-            : ListView.builder(
-                itemBuilder: (BuildContext context, int index) {
-                  return NewsCard(
-                    title: controller.listArticle[index].title,
-                    description: controller.listArticle[index].body,
-                    id: controller.listArticle[index].id.toString(),
-                  );
-                },
-          itemCount: controller.listArticle.length,
-              ),
+            : RefreshIndicator(
+              onRefresh: () => controller.refreshListArticle(),
+              child: ListView.builder(
+                  itemCount: controller.listArticle.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return NewsCard(
+                      userId: controller.listArticle[index].id.toString(),
+                      title: controller.listArticle[index].title,
+                      description: controller.listArticle[index].body,
+                      id: controller.listArticle[index].id.toString(),
+                    );
+                  },
+                ),
+            ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          Get.toNamed(Routes.SPLASH_ACREEN);
+          Get.toNamed(Routes.POST_NEWS_SCREEN);
         },
         backgroundColor: Color(0xffd9d9d9),
         child: Icon(Icons.add, color: Color(0xff000000),),

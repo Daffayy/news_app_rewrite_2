@@ -34,7 +34,7 @@ class NewsCard extends StatelessWidget {
                 ListTile(
                   trailing: IconButton(
                     onPressed: () {
-                      homeController.deleteArticle(userId: id.toString());
+                      homeController.deleteArticle(userId:id.toString());
                     },
                     icon: Icon(Icons.close, color: Colors.black,),
                   ),
